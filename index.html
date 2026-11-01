@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#801425">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SAFE Invoice Studio</title>
+  <meta name="description" content="SAFE Legal Solutions – internal invoicing for retainer and case-by-case clients">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <img class="brand-logo" src="assets/logo.png" alt="SAFE Legal Solutions">
+      <div>
+        <div class="brand-name">SAFE Invoice Studio</div>
+        <div class="brand-sub">SAFE Legal Solutions</div>
+      </div>
+    </a>
+    <div class="topbar-right" id="topbarRight" hidden>
+      <span id="modeBadge" class="mode-badge"></span>
+      <span id="userChip" class="user-chip"></span>
+      <button class="btn ghost" data-action="go" data-to="#/settings">Settings</button>
+      <button class="btn ghost" data-action="sign-out" id="signOutBtn">Sign out</button>
+    </div>
+  </header>
+
+  <div class="layout" id="layout">
+    <aside class="sidebar" id="sidebar">
+      <button class="btn primary block" data-action="new-invoice">+ New invoice</button>
+      <button class="btn block" data-action="new-client">+ Add client</button>
+      <nav class="side-nav" aria-label="Sections">
+        <a href="#/" data-nav="dashboard">Dashboard</a>
+        <a href="#/invoices" data-nav="invoices">Invoices</a>
+        <a href="#/clients" data-nav="clients">Clients</a>
+      </nav>
+      <input id="clientSearch" class="input" type="search" placeholder="Search clients" aria-label="Search clients">
+      <nav id="clientList" class="client-list" aria-label="Clients"></nav>
+    </aside>
+    <main id="main" class="main" tabindex="-1"></main>
+  </div>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><h2 id="modalTitle"></h2><button class="icon-btn" data-action="close-modal" aria-label="Close">×</button></div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="assets/vendor/pdf-lib.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/invoice-pdf.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
